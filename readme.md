@@ -4,4 +4,5 @@ An backend made in Node.js and Express for the [follow-work](https://github.com/
 
 # Configuration
 
-Just clone the repository and run 'yarn'
+Just clone the repository and run 'yarn'.
+Edit config.example.js with your mongodb string and the secret and save as config.js
