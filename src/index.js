@@ -2,16 +2,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const routes = require('./routes');
+const mongodbURL = require('./config').mongoUrl;
 
 const app = express();
 
-mongoose.connect(
-  'mongodb+srv://dionisio:dionisio@cluster0-zrw0v.mongodb.net/follow-work?retryWrites=true&w=majority',
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  }
-);
+mongoose.connect(mongodbURL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 app.use(cors());
 app.use(express.json());
