@@ -33,6 +33,7 @@ module.exports = {
 
         work.steps[foundIndex] = {
           _id: work.steps[foundIndex]._id,
+          doneDate: Date.now,
           order: work.steps[foundIndex].order,
           name: work.steps[foundIndex].name,
           img: {
