@@ -25,7 +25,11 @@ const WorkSchema = new mongoose.Schema(
               contentType: String
             }
           },
-          done: Boolean
+          done: Boolean,
+          doneDate: {
+            type: Date,
+            default: Date.now
+          }
         }
       ],
       required: true
