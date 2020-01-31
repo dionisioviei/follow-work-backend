@@ -22,8 +22,8 @@ routes.delete('/users/:id', protectRoute('admin'), UserController.destroy);
 
 routes.put(
   '/works/:id/steps',
-  protectRoute('all'),
   upload.single('image'),
+  protectRoute('all'),
   StepController.update
 );
 

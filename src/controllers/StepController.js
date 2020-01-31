@@ -17,10 +17,11 @@ module.exports = {
     const { id } = req.params;
     const { step_id, role, roleUser } = req.body;
 
+    work = null;
     if (role === 'normal') {
-      let work = await Work.findOne({ _id: id, userManager: roleUser });
+      work = await Work.findOne({ _id: id, userManager: roleUser });
     } else {
-      let work = await Work.findOne({ _id: id });
+      work = await Work.findOne({ _id: id });
     }
 
     if (work && req.file) {
@@ -30,10 +31,11 @@ module.exports = {
         if (foundIndex === -1) {
           return res.sendStatus(400);
         }
+        const dateNow = new Date();
 
         work.steps[foundIndex] = {
           _id: work.steps[foundIndex]._id,
-          doneDate: Date.now,
+          doneDate: dateNow,
           order: work.steps[foundIndex].order,
           name: work.steps[foundIndex].name,
           img: {
